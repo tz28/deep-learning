@@ -41,4 +41,6 @@ def relu_backward(dA, cache):<br>
     
     return dZ
 <br>
+3.compare_initializations.py： 比较了四种初始化方法（初始化为0，随机初始化，Xavier initialization和He initialization），具体效果见CSDN博客：
+
 动态更新.................
