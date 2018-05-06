@@ -2,7 +2,7 @@
 personal practice
 ---------------
 深度学习个人练习，该项目内容包括：<br>
-1.deep_neural_network_v1.py：自己实现的最简单的深度神经网络（多层感知机),不包含正则化,dropout,动量等...总之是最基本的,只有fp和bp。
+1.deep_neural_network_v1.py：自己实现的最简单的深度神经网络（多层感知机),不包含正则化,dropout,动量等...总之是最基本的,只有fp和bp。<br><br>
 2.deep_neural_network_v2.py: 自己实现的最简单的深度神经网络（多层感知机）,和v1的唯一区别在于：v1中fp过程,caches每一层存储的是（w,b,z,A_pre）,
 而v2每一层存储的是（w,b,z,A）, 第0层存储的（None,None,None,X）,X即A0。    `个人更推荐用v2版本`.
 
