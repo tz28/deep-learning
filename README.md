@@ -54,8 +54,11 @@ def relu_backward(dA, cache):<br>
 6.deep_neural_network_with_dropout.py ：带dropout正则项的网络（在deep_neural_network.py的基础上增加了dropout正则项），具体详见CSDN博客：
 https://blog.csdn.net/u012328159/article/details/80210363
 <br>
+<br>
 7. gradient_checking.py： use gradient checking in dnn，梯度检验，可以检查自己手撸的bp是否正确。具体原理，详见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80232585
 <br>
+<br>
+
 <br>
 <br>
 动态更新.................
