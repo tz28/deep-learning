@@ -55,4 +55,10 @@ def relu_backward(dA, cache):<br>
 https://blog.csdn.net/u012328159/article/details/80210363
 <br>
 <br>
+7. gradient_checking.py： use gradient checking in dnn，梯度检验，可以检查自己手撸的bp是否正确。具体原理，详见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80232585
+<br>
+<br>
+
+<br>
+<br>
 动态更新.................
