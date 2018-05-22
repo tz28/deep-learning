@@ -58,6 +58,9 @@ https://blog.csdn.net/u012328159/article/details/80210363
 7. gradient_checking.py： use gradient checking in dnn，梯度检验，可以检查自己手撸的bp是否正确。具体原理，详见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80232585
 <br>
 <br>
+8. deep_neural_network_with_gd.py：实现了三种梯度下降，包括：batch gradient descent（BGD）、stochastic gradient descent（SGD）和 mini-batch gradient descent。具体内容见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80252012
+<br>
+<br>
 
 <br>
 <br>
