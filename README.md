@@ -61,7 +61,11 @@ https://blog.csdn.net/u012328159/article/details/80210363
 8. deep_neural_network_with_gd.py：实现了三种梯度下降，包括：batch gradient descent（BGD）、stochastic gradient descent（SGD）和 mini-batch gradient descent。具体内容见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80252012
 <br>
 <br>
+9. deep_neural_network_with_optimizers.py：实现了深度学习中几种优化器，包括：momentum、nesterov momentum、Adagrad、Adadelta、RMSprop、Adam。关于这几种算法，具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/80311892
+<br>
+<br>
 
 <br>
 <br>
+--------
 动态更新.................
