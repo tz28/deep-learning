@@ -49,7 +49,7 @@ def relu_backward(dA, cache):<br>
     return dZ
 <br>
 <br>
-4.**compare_initializations.py**： 比较了四种初始化方法（初始化为0，随机初始化，Xavier initialization和He initialization），具体效果见CSDN博客：https://blog.csdn.net/u012328159/article/details/80025785
+4.**compare_initializations.py** ： 比较了四种初始化方法（初始化为0，随机初始化，Xavier initialization和He initialization），具体效果见CSDN博客：https://blog.csdn.net/u012328159/article/details/80025785
 <br>
 <br>
 5.**deep_neural_network_with_L2.py**: 带L2正则项正则项的网络（在deep_neural_network.py的基础上增加了L2正则项）
@@ -59,13 +59,13 @@ def relu_backward(dA, cache):<br>
 https://blog.csdn.net/u012328159/article/details/80210363
 <br>
 <br>
-7. **gradient_checking.py**： use gradient checking in dnn，梯度检验，可以检查自己手撸的bp是否正确。具体原理，详见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80232585
+7. **gradient_checking.py** ： use gradient checking in dnn，梯度检验，可以检查自己手撸的bp是否正确。具体原理，详见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80232585
 <br>
 <br>
-8. **deep_neural_network_with_gd.py**：实现了三种梯度下降，包括：batch gradient descent（BGD）、stochastic gradient descent（SGD）和 mini-batch gradient descent。具体内容见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80252012
+8. **deep_neural_network_with_gd.py** ：实现了三种梯度下降，包括：batch gradient descent（BGD）、stochastic gradient descent（SGD）和 mini-batch gradient descent。具体内容见我的CSDN博客：https://blog.csdn.net/u012328159/article/details/80252012
 <br>
 <br>
-9. **deep_neural_network_with_optimizers.py**：实现了深度学习中几种优化器，包括：momentum、nesterov momentum、Adagrad、Adadelta、RMSprop、Adam。关于这几种算法，具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/80311892
+9. **deep_neural_network_with_optimizers.py** ：实现了深度学习中几种优化器，包括：momentum、nesterov momentum、Adagrad、Adadelta、RMSprop、Adam。关于这几种算法，具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/80311892
 <br>
 <br>
 10. **机器学习资料整理.pdf** ：整理了一些我知道的机器学习资料，希望能够帮助到想学习的同学。博客同步地址：https://blog.csdn.net/u012328159/article/details/80574713
