@@ -13,7 +13,8 @@ personal practice
 <br>
 3、**deep_neural_network_ng.py**: ---改正版ng在Coursera上的深度神经网络<br>
 **具体主要改正的是对relu激活函数的求导，具体内容为:<br>**
-def relu_backward(dA, cache):<br>
+```python
+def relu_backward(dA, cache):
 	"""
 	Implement the backward propagation for a single RELU unit.
 	
@@ -27,8 +28,10 @@ def relu_backward(dA, cache):<br>
 	A = np.maximum(0, Z)
 	dZ = dA * np.int64(A > 0) # np.int64(A > 0)是A对Z求导
 	return dZ
+```
 **ng在作业中写的relu导数（个人认为是错的）为：<br>**
-def relu_backward(dA, cache):<br>
+```python
+def relu_backward(dA, cache):
     """
     Implement the backward propagation for a single RELU unit.
     Arguments:
@@ -47,9 +50,10 @@ def relu_backward(dA, cache):<br>
     assert (dZ.shape == Z.shape)
     
     return dZ
+```
 <br>
 <br>
-4、**compare_initializations**： 比较了四种初始化方法（初始化为0，随机初始化，Xavier initialization和He initialization），具体效果见CSDN博客：https://blog.csdn.net/u012328159/article/details/80025785
+4、**compare_initializations.py**： 比较了四种初始化方法（初始化为0，随机初始化，Xavier initialization和He initialization），具体效果见CSDN博客：https://blog.csdn.net/u012328159/article/details/80025785
 <br>
 <br>
 5、 **deep_neural_network_with_L2.py**: 带L2正则项正则项的网络（在deep_neural_network.py的基础上增加了L2正则项）
