@@ -64,7 +64,9 @@ https://blog.csdn.net/u012328159/article/details/80210363
 9. deep_neural_network_with_optimizers.py：实现了深度学习中几种优化器，包括：momentum、nesterov momentum、Adagrad、Adadelta、RMSprop、Adam。关于这几种算法，具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/80311892
 <br>
 <br>
-
+10. 机器学习资料整理.pdf ：整理了一些我知道的机器学习资料，希望能够帮助到想学习的同学。博客同步地址：https://blog.csdn.net/u012328159/article/details/80574713
+<br>
+<br>
 <br>
 <br>
 --------
