@@ -49,7 +49,7 @@ def relu_backward(dA, cache):<br>
     return dZ
 <br>
 <br>
-4、**compare_initializations.py_ ：** 比较了四种初始化方法（初始化为0，随机初始化，Xavier initialization和He initialization），具体效果见CSDN博客：https://blog.csdn.net/u012328159/article/details/80025785
+4、**compare_initializations.py**： 比较了四种初始化方法（初始化为0，随机初始化，Xavier initialization和He initialization），具体效果见CSDN博客：https://blog.csdn.net/u012328159/article/details/80025785
 <br>
 <br>
 5、 **deep_neural_network_with_L2.py**: 带L2正则项正则项的网络（在deep_neural_network.py的基础上增加了L2正则项）
