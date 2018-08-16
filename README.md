@@ -3,6 +3,21 @@ personal practice
 ---------------
 深度学习个人练习，该项目内容包括：
 
+实现了四种初始化方法：zero initialize, random initialize, xavier initialize, he initialize。
+
+深度神经网络
+
+正则化
+
+dropout
+
+三种梯度下降方法：BGD, SGD, mini-batch
+
+六种优化算法：momentum、nesterov momentum、Adagrad、Adadelta、RMSprop、Adam
+
+梯度检验
+
+
 1、**deep_neural_network_v1.py**：自己实现的最简单的深度神经网络（多层感知机),不包含正则化,dropout,动量等...总之是最基本的,只有fp和bp。
 
 2、**deep_neural_network_v2.py**:  自己实现的最简单的深度神经网络（多层感知机）,和v1的唯一区别在于：v1中fp过程,caches每一层存储的是（w,b,z,A_pre）,
