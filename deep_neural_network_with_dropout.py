@@ -118,12 +118,12 @@ def compute_cost(AL,Y):
 	return cost
 
 # derivation of relu
-def relu_backward(A):
+def relu_backward(Z):
 	"""
-	:param A: activation function
+	:param Z: the input of activation
 	:return:
 	"""
-	dA = np.int64(A > 0)
+	dA = np.int64(Z > 0)
 	return dA
 
 #带dropout的bp
@@ -158,8 +158,8 @@ def backward_propagation_with_dropout(AL, Y, caches, keep_prob = 0.8):
 		Dl = caches[l][4] #当前层的D
 		dal = np.multiply(dal, Dl)#Apply mask Dl to shut down the same neurons as during the forward propagation
 		dal = dal / keep_prob #Scale the value of neurons that haven't been shut down
-		Al = caches[l][3]  # 当前层的A
-		dzl = np.multiply(dal, relu_backward(Al))  # 可以直接用dzl = np.multiply(dal, np.int64(Al > 0))来实现
+		z = caches[l][2]  # 当前层的Z
+		dzl = np.multiply(dal, relu_backward(z))
 		prev_A = caches[l-1][3]  # 前一层的A
 		dWl = np.dot(dzl, prev_A.T)
 		dbl = np.sum(dzl, axis=1, keepdims=True)

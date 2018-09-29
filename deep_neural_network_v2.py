@@ -80,13 +80,14 @@ def compute_cost(AL,Y):
 	# print('=====================cost===================')
 	# print(cost)
 	return cost
+
 # derivation of relu
-def relu_backward(A):
+def relu_backward(Z):
 	"""
-	:param A: activation function
+	:param Z: the input of activation
 	:return:
 	"""
-	dA = np.int64(A > 0)
+	dA = np.int64(Z > 0)
 	return dA
 
 def backward_propagation(AL, Y, caches):
@@ -117,8 +118,8 @@ def backward_propagation(AL, Y, caches):
 		dz = dzL #用后一层的dz
 
 		dal = np.dot(post_W.T, dz)
-		Al = caches[l][3]#当前层的A
-		dzl = np.multiply(dal, relu_backward(Al))#可以直接用dzl = np.multiply(dal, np.int64(Al > 0))来实现
+		Z = caches[l][2]#当前层的Z
+		dzl = np.multiply(dal, relu_backward(Z))#可以直接用dzl = np.multiply(dal, np.int64(Z > 0))来实现
 		prev_A = caches[l-1][3]#前一层的A
 		dWl = np.dot(dzl, prev_A.T)
 		dbl = np.sum(dzl, axis=1, keepdims=True)

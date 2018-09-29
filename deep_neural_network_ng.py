@@ -152,9 +152,9 @@ def relu_backward(dA, cache):
 	dZ -- Gradient of the cost with respect to Z
 	"""
 	Z = cache
-	A = np.maximum(0, Z)
-	dZ = dA * np.int64(A > 0) # np.int64(A > 0)是A对Z求导
+	dZ = dA * np.int64(Z > 0) #
 	return dZ
+	
 #calculate dA_pre,dW,db
 def linear_backward(dZ, cache):
 	"""
