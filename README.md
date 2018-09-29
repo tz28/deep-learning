@@ -17,7 +17,9 @@ personal practice
 
 + 梯度检验
 
++ batch normalization
 ------
+**Note: 下列1-10中网络架构主要为两大块，fp和bp，这样会导致耦合度过高，结构不清晰。11中优化了网络结构，使得耦合度更低，网络结构推荐用11中的结构。
 
 1、**deep_neural_network_v1.py**：自己实现的最简单的深度神经网络（多层感知机),不包含正则化,dropout,动量等...总之是最基本的,只有fp和bp。
 
@@ -79,6 +81,8 @@ def relu_backward(dA, cache):
 9、 **deep_neural_network_with_optimizers.py** ：实现了深度学习中几种优化器，包括：momentum、nesterov momentum、Adagrad、Adadelta、RMSprop、Adam。关于这几种算法，具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/80311892
 
 10、 **机器学习资料整理.pdf** ：整理了一些我知道的机器学习资料，希望能够帮助到想学习的同学。博客同步地址：https://blog.csdn.net/u012328159/article/details/80574713
+
+11.**batch_normalization.py** ：实现了batch normalization, 改进了整个网络的架构，使得网络的架构更加清晰，耦合度更低。关于batch normalization的具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/82840084
 
 <br>
 <br>
