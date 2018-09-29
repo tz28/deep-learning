@@ -1,9 +1,9 @@
 # deep-learning
 personal practice
 ---------------
-深度学习个人练习，该项目内容包括：
+深度学习个人练习，该项目实现了深度学习中一些常用的算法，内容包括：
 
-+ 实现了四种初始化方法：zero initialize, random initialize, xavier initialize, he initialize。
++ 四种初始化方法：zero initialize, random initialize, xavier initialize, he initialize。
 
 + 深度神经网络
 
