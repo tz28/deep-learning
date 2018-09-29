@@ -20,7 +20,7 @@ def initialize_parameters(layer_dims):
 	# initialize the exponential weight average
 	bn_param = {}
 	for l in range(1,L):
-		parameters["W" + str(l)] = np.random.randn(layer_dims[l],layer_dims[l-1])*0.1
+		parameters["W" + str(l)] = np.random.randn(layer_dims[l],layer_dims[l-1])*0.01
 		parameters["b" + str(l)] = np.zeros((layer_dims[l],1))
 		parameters["gamma" + str(l)] = np.ones((layer_dims[l],1))
 		parameters["beta" + str(l)] = np.zeros((layer_dims[l],1))
@@ -101,8 +101,8 @@ def forward_propagation(X, parameters, bn_param, decay = 0.9):
 	WL = parameters["W" + str(L)]
 	bL = parameters["b" + str(L)]
 	zL = linear_forward(A, WL, bL)
+	caches.append((A, WL, bL, None, None, None, None))
 	AL = sigmoid_forward(zL)
-	caches.append((AL, WL, bL, None, None, None, None))
 	return AL, caches, bn_param
 
 #calculate cost function
@@ -312,7 +312,7 @@ def predict(X_test, y_test, parameters, bn_param):
 	return accuracy
 
 #DNN model
-def DNN(X_train, y_train, X_test, y_test, layer_dims, learning_rate= 0.001, num_iterations=30000):
+def DNN(X_train, y_train, X_test, y_test, layer_dims, learning_rate= 0.01, num_iterations=30000):
 	parameters, bn_param = L_layer_model(X_train, y_train, layer_dims, learning_rate, num_iterations)
 	accuracy = predict(X_test,y_test,parameters,bn_param)
 	return accuracy
