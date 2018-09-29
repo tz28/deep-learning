@@ -21,8 +21,8 @@ personal practice
 ------
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) ***Note: 下列 1-10中网络架构主要为四大块： initialize parameters、forward propagation、backward propagation、 update parameters，其中在 fp 和 bp 的时候各个功能没有单独封装，这样会导致耦合度过高，结构不清晰。
-11中优化了网络结构，使得耦合度更低，网络结构推荐用11中的结构。
-重构了神经网络架构（见 deep_neural_network_release.py），把各功能函数分离出来，耦合度更低，结构更清楚，bp过程更加清晰。推荐此版本，用1-10时，可用此版本替换相应代码***
+11中优化了网络结构，使得耦合度更低，网络结构推荐用11中的结构。<br>
+今天（2018-9-23）重构了神经网络架构（见 deep_neural_network_release.py），把各功能函数分离出来，耦合度更低，结构更清楚，bp过程更加清晰。推荐此版本，用1-10时，可用此版本替换相应代码***
 
 1、**deep_neural_network_v1.py**：自己实现的最简单的深度神经网络（多层感知机),不包含正则化,dropout,动量等...总之是最基本的,只有fp和bp。
 
