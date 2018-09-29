@@ -40,8 +40,8 @@ def relu_backward(dA, cache):
 	dZ -- Gradient of the cost with respect to Z
 	"""
 	Z = cache
-	A = np.maximum(0, Z)
-	dZ = dA * np.int64(A > 0) # np.int64(A > 0)是A对Z求导
+	#A = np.maximum(0, Z),这一步我认为根据relu的导数是没有必要的，不过有了对结果也没有影响
+	dZ = dA * np.int64(Z > 0)
 	return dZ
 ```
 **ng在作业中写的relu导数（个人认为是错的）为：<br>**
