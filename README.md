@@ -20,7 +20,7 @@ personal practice
 + batch normalization
 ------
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) ***Note: 下列 1-10中网络架构主要为两大块，fp和bp，这样会导致耦合度过高，结构不清晰。11中优化了网络结构，使得耦合度更低，网络结构推荐用11中的结构,近期我会重写一个网络结构放上来***
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) ***Note: 下列 1-10中网络架构主要为四大块： initialize parameters、forward propagation、backward propagation、 update parameters，其中在 fp 和 bp 的时候各个功能没有单独封装，这样会导致耦合度过高，结构不清晰。11中优化了网络结构，使得耦合度更低，网络结构推荐用11中的结构,近期我会重写一个网络结构放上来***
 
 1、**deep_neural_network_v1.py**：自己实现的最简单的深度神经网络（多层感知机),不包含正则化,dropout,动量等...总之是最基本的,只有fp和bp。
 
