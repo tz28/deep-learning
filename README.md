@@ -83,7 +83,7 @@ def relu_backward(dA, cache):
 
 10、 **机器学习资料整理.pdf** ：整理了一些我知道的机器学习资料，希望能够帮助到想学习的同学。博客同步地址：https://blog.csdn.net/u012328159/article/details/80574713
 
-11.**batch_normalization.py** ：实现了batch normalization, 改进了整个网络的架构，使得网络的架构更加清晰，耦合度更低。关于batch normalization的具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/82840084
+11、 **batch_normalization.py** ：实现了batch normalization, 改进了整个网络的架构，使得网络的架构更加清晰，耦合度更低。关于batch normalization的具体内容，见本人的CSDN博客：https://blog.csdn.net/u012328159/article/details/82840084
 
 <br>
 <br>
