@@ -211,7 +211,45 @@ def update_parameters(parameters, grads, learning_rate):
 			parameters["beta" + str(l + 1)] = parameters["beta" + str(l + 1)] - learning_rate * grads["dbeta" + str(l + 1)]
 	return parameters
 
-def L_layer_model(X, Y, layer_dims, learning_rate, num_iterations):
+def random_mini_batches(X, Y, mini_batch_size = 64, seed=1):
+	"""
+	Creates a list of random minibatches from (X, Y)
+	Arguments:
+	X -- input data, of shape (input size, number of examples)
+	Y -- true "label" vector (1 for blue dot / 0 for red dot), of shape (1, number of examples)
+	mini_batch_size -- size of the mini-batches, integer
+
+	Returns:
+	mini_batches -- list of synchronous (mini_batch_X, mini_batch_Y)
+	"""
+	np.random.seed(seed)
+	m = X.shape[1]  # number of training examples
+	mini_batches = []
+
+	# Step 1: Shuffle (X, Y)
+	permutation = list(np.random.permutation(m))
+	shuffled_X = X[:, permutation]
+	shuffled_Y = Y[:, permutation].reshape((1, m))
+
+	# Step 2: Partition (shuffled_X, shuffled_Y). Minus the end case.
+	num_complete_minibatches = m // mini_batch_size  # number of mini batches of size mini_batch_size in your partitionning
+	for k in range(0, num_complete_minibatches):
+		mini_batch_X = shuffled_X[:, k * mini_batch_size: (k + 1) * mini_batch_size]
+		mini_batch_Y = shuffled_Y[:, k * mini_batch_size: (k + 1) * mini_batch_size]
+		mini_batch = (mini_batch_X, mini_batch_Y)
+		mini_batches.append(mini_batch)
+
+	# Handling the end case (last mini-batch < mini_batch_size)
+	if m % mini_batch_size != 0:
+		mini_batch_X = shuffled_X[:, num_complete_minibatches * mini_batch_size: m]
+		mini_batch_Y = shuffled_Y[:, num_complete_minibatches * mini_batch_size: m]
+		mini_batch = (mini_batch_X, mini_batch_Y)
+		mini_batches.append(mini_batch)
+
+	return mini_batches
+
+
+def L_layer_model(X, Y, layer_dims, learning_rate, num_iterations, mini_batch_size = 64):
 	"""
 	:param X:
 	:param Y:
@@ -225,18 +263,24 @@ def L_layer_model(X, Y, layer_dims, learning_rate, num_iterations):
 	costs = []
 	# initialize parameters
 	parameters, bn_param = initialize_parameters(layer_dims)
+	seed = 0
 	for i in range(0, num_iterations):
-		#foward propagation
-		AL,caches,bn_param = forward_propagation(X, parameters,bn_param)
-		# calculate the cost
-		cost = compute_cost(AL, Y)
-		if i % 1000 == 0:
+		seed = seed + 1
+		minibatches = random_mini_batches(X, Y, mini_batch_size, seed)
+		for minibatch in minibatches:
+			# Select a minibatch
+			(minibatch_X, minibatch_Y) = minibatch
+			#foward propagation
+			AL,caches,bn_param = forward_propagation(minibatch_X, parameters,bn_param)
+			# calculate the cost
+			cost = compute_cost(AL, minibatch_Y)
+			#backward propagation
+			grads = backward_propagation(AL, minibatch_Y, caches)
+			#update parameters
+			parameters = update_parameters(parameters, grads, learning_rate)
+		if i % 200 == 0:
 			print("Cost after iteration {}: {}".format(i, cost))
 			costs.append(cost)
-		#backward propagation
-		grads = backward_propagation(AL, Y, caches)
-		#update parameters
-		parameters = update_parameters(parameters, grads, learning_rate)
 	print('length of cost')
 	print(len(costs))
 	plt.clf()
@@ -312,10 +356,11 @@ def predict(X_test, y_test, parameters, bn_param):
 	return accuracy
 
 #DNN model
-def DNN(X_train, y_train, X_test, y_test, layer_dims, learning_rate= 0.01, num_iterations=30000):
-	parameters, bn_param = L_layer_model(X_train, y_train, layer_dims, learning_rate, num_iterations)
-	accuracy = predict(X_test,y_test,parameters,bn_param)
-	return accuracy
+def DNN(X_train, y_train, X_test, y_test, layer_dims, learning_rate= 0.01, num_iterations=10000, mini_batch_size=64):
+	parameters, bn_param = L_layer_model(X_train, y_train, layer_dims, learning_rate, num_iterations, mini_batch_size)
+	train_accuracy = predict(X_train, y_train, parameters, bn_param)
+	test_accuracy = predict(X_test,y_test,parameters,bn_param)
+	return train_accuracy, test_accuracy
 
 
 if __name__ == "__main__":
@@ -325,5 +370,6 @@ if __name__ == "__main__":
 	y_train = y_train.reshape(y_train.shape[0], -1).T
 	X_test = X_test.T
 	y_test = y_test.reshape(y_test.shape[0], -1).T
-	accuracy = DNN(X_train,y_train,X_test,y_test,[X_train.shape[0],10,5,1])
-	print(accuracy)
+	train_accuracy, test_accuracy = DNN(X_train,y_train,X_test,y_test,[X_train.shape[0],10,5,1], mini_batch_size = 256)
+	print('train accuracy: ', train_accuracy)
+	print('test accuracy: ', test_accuracy)
