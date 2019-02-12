@@ -89,7 +89,7 @@ def relu_backward(dA, cache):
 
 12、 **deep_neural_network_release.py**：重构了深度神经网络，把各功能函数分离出来，耦合度更低，结构更清楚，bp过程更加清晰。**推荐此版本**
 
-13、**rnn.py**：recurrent neural network，最简单的循环神经网络（确切来说是基于字符的），输入输出采用one-hot，场景：生成单词。包括，梯度裁剪、字符采样。
+13、**rnn.py**：recurrent neural network，最简单的循环神经网络（确切来说是基于字符的），输入输出采用one-hot，场景：生成单词。包括，梯度裁剪、字符采样。关于bp推导，详见本人CSDN博客：https://blog.csdn.net/u012328159/article/details/84962285
 
 <br>
 <br>
