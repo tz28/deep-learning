@@ -18,6 +18,8 @@ personal practice
 + 梯度检验
 
 + batch normalization
+
++ recurrent neural network (RNN)
 ------
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) ***Note: 下列 1-10中网络架构主要为四大块： initialize parameters、forward propagation、backward propagation、 update parameters，其中在 fp 和 bp 的时候各个功能没有单独封装，这样会导致耦合度过高，结构不清晰。
